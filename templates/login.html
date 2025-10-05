@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Mate - Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9fafb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 350px;
+      text-align: center;
+    }
+    h2 { font-size: 22px; margin: 0; }
+    p { color: #6b7280; margin: 5px 0 20px; }
+    input[type="email"], input[type="password"] {
+      width: 100%; padding: 10px; margin: 10px 0;
+      border: 1px solid #d1d5db; border-radius: 5px;
+    }
+    button {
+      background-color: #3b82f6; color: white;
+      border: none; padding: 10px; border-radius: 5px;
+      width: 100%; cursor: pointer; font-size: 16px;
+    }
+    button:hover { background-color: #2563eb; }
+    .forgot { text-align: right; margin-bottom: 15px; font-size: 14px; }
+    .forgot a { color: #1d4ed8; text-decoration: none; }
+    .signup { margin-top: 15px; font-size: 14px; }
+    .signup a { color: #1d4ed8; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome Back</h2>
+    <p>Enter your email below to login to your account.</p>
+    <form action="{{ url_for('login') }}" method="POST">
+      <input type="email" name="email" placeholder="name@example.com" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <div class="forgot">
+        <a href="#">Forgot your password?</a>
+      </div>
+      <button type="submit">Log In</button>
+    </form>
+    <div class="signup">
+      <p>Don’t have an account? <a href="{{ url_for('register') }}">Sign up</a></p>
+    </div>
+  </div>
+</body>
+</html>
